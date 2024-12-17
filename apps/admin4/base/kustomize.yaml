@@ -8,7 +8,7 @@ spec:
   prune: true
   sourceRef:
     kind: GitRepository
-    name: dev-team
+    name: dev2-team
   interval: 10m0s
   path: ./apps/admin4/${ENVIRONMENT}/${CLUSTER}
   postBuild:
