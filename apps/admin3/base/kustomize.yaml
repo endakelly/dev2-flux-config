@@ -1,0 +1,17 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: admin3
+  namespace: flux-system
+spec:
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: dev-team
+  interval: 10m0s
+  path: ./apps/admin3/${ENVIRONMENT}/${CLUSTER}
+  postBuild:
+    substitute:
+      NAMESPACE: "admin3"
+      WI_NAME: "admin3"
